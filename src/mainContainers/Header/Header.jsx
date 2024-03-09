@@ -5,29 +5,64 @@ import logo from "../../assets/images/logo.svg";
 import coachProfile from "../../assets/images/coachProfile.jpg";
 
 const Header = () => {
+  // Darkmode logic
+useEffect(() => {
+  // Function to handle theme toggle
+  const handleThemeToggle = () => {
+    const themeToggleDarkIcon = document.getElementById("theme-toggle-dark-icon");
+    const themeToggleLightIcon = document.getElementById("theme-toggle-light-icon");
+
+    // Toggle icons inside button
+    themeToggleDarkIcon.classList.toggle("hidden");
+    themeToggleLightIcon.classList.toggle("hidden");
+
+    // Toggle theme in local storage
+    if (localStorage.getItem("color-theme") === "dark") {
+      document.documentElement.classList.remove("dark");
+      localStorage.setItem("color-theme", "light");
+    } else {
+      document.documentElement.classList.add("dark");
+      localStorage.setItem("color-theme", "dark");
+    }
+  };
+
+  // Add event listener for theme toggle button
+  const themeToggleBtn = document.getElementById("theme-toggle");
+  if (themeToggleBtn) {
+    themeToggleBtn.addEventListener("click", handleThemeToggle);
+  }
+
+  // Cleanup function
+  return () => {
+    if (themeToggleBtn) {
+      themeToggleBtn.removeEventListener("click", handleThemeToggle);
+    }
+  };
+}, []);
+
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const [isNotificationOpen, setIsNotificationOpen] = useState(false);
 
-  useEffect(() => {
-    const handleDropdownToggle = () => {
-      setIsDropdownOpen(!isDropdownOpen);
-      console.log("clicked");
-      console.log(isDropdownOpen);
-      console.log(isNotificationOpen);
-    };
+  const handleDropdownToggle = () => {
+    setIsDropdownOpen(!isDropdownOpen);
+    console.log("clicked");
+  };
 
+  console.log(isNotificationOpen);
+  console.log(isDropdownOpen);
+
+  useEffect(() => {
     const notificationToggle = document.getElementById("notification-toggle");
     if (notificationToggle) {
       notificationToggle.addEventListener("click", handleDropdownToggle);
     }
-
     // Cleanup function to remove event listener
     return () => {
       if (notificationToggle) {
         notificationToggle.removeEventListener("click", handleDropdownToggle);
       }
     };
-  }, [isDropdownOpen]);
+  }, []);
 
   const handleNotificationToggle = () => {
     setIsNotificationOpen(!isNotificationOpen);
@@ -118,7 +153,7 @@ const Header = () => {
                 </svg>
                 <svg
                   id="theme-toggle-light-icon"
-                  className="hidden w-5 h-5"
+                  className=" w-5 h-5"
                   fill="currentColor"
                   viewBox="0 0 20 20"
                   xmlns="http://www.w3.org/2000/svg"
@@ -177,7 +212,7 @@ const Header = () => {
                   <path d="M12.133 10.632v-1.8A5.406 5.406 0 0 0 7.979 3.57.946.946 0 0 0 8 3.464V1.1a1 1 0 0 0-2 0v2.364a.946.946 0 0 0 .021.106 5.406 5.406 0 0 0-4.154 5.262v1.8C1.867 13.018 0 13.614 0 14.807 0 15.4 0 16 .538 16h12.924C14 16 14 15.4 14 14.807c0-1.193-1.867-1.789-1.867-4.175ZM3.823 17a3.453 3.453 0 0 0 6.354 0H3.823Z" />
                 </svg>
               </button>
-              {isNotificationOpen && <Notifications />}
+              <Notifications isNotificationOpen={isNotificationOpen}/>
               {/* <!-- Dropdown menu --> */}
 
               {/* <!-- Apps --> */}
@@ -329,7 +364,11 @@ const Header = () => {
             </div>
           </div>
         </nav>
+        
       </header>
+      
+      
+
     </>
   );
 };

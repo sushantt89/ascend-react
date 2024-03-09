@@ -1,11 +1,11 @@
 import React from "react";
 
-const Notifications = () => {
+const Notifications = ({isNotificationOpen}) => {
   return (
     <>
       {/* <!-- Dropdown menu --> */}
       <div
-        className="hidden overflow-hidden z-50 my-4 max-w-sm text-base list-none bg-white rounded divide-y divide-gray-100 shadow-lg dark:divide-gray-600 dark:bg-gray-700 absolute top-full right-0 w-96"
+        className={`${isNotificationOpen ? "" : "hidden"} overflow-hidden z-50 my-4 max-w-sm text-base list-none bg-white rounded divide-y divide-gray-100 shadow-lg dark:divide-gray-600 dark:bg-gray-700 absolute top-full right-0 w-96`}
         id="notification-dropdown"
       >
         <div className="block py-2 px-4 text-base font-medium text-center text-gray-700 bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
