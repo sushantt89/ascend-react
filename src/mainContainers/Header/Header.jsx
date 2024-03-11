@@ -3,66 +3,55 @@ import Notifications from "../../Components/Notifications/Notifications";
 import "../../styles/ui/output.css";
 import logo from "../../assets/images/logo.svg";
 import coachProfile from "../../assets/images/coachProfile.jpg";
+import ProfileMenu from "../../Components/ProfileMenu/ProfileMenu";
 
 const Header = () => {
-  // Darkmode logic
-useEffect(() => {
-  // Function to handle theme toggle
-  const handleThemeToggle = () => {
-    const themeToggleDarkIcon = document.getElementById("theme-toggle-dark-icon");
-    const themeToggleLightIcon = document.getElementById("theme-toggle-light-icon");
+  //handleProfileClick();
+  const [isProfileOpen, setIsProfileOpen] = useState(false);
 
-    // Toggle icons inside button
-    themeToggleDarkIcon.classList.toggle("hidden");
-    themeToggleLightIcon.classList.toggle("hidden");
-
-    // Toggle theme in local storage
-    if (localStorage.getItem("color-theme") === "dark") {
-      document.documentElement.classList.remove("dark");
-      localStorage.setItem("color-theme", "light");
-    } else {
-      document.documentElement.classList.add("dark");
-      localStorage.setItem("color-theme", "dark");
-    }
+  
+  const handleProfileOpen = () => {
+    setIsProfileOpen(!isProfileOpen);
   };
 
-  // Add event listener for theme toggle button
-  const themeToggleBtn = document.getElementById("theme-toggle");
-  if (themeToggleBtn) {
-    themeToggleBtn.addEventListener("click", handleThemeToggle);
-  }
-
-  // Cleanup function
-  return () => {
-    if (themeToggleBtn) {
-      themeToggleBtn.removeEventListener("click", handleThemeToggle);
-    }
-  };
-}, []);
-
-  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
-  const [isNotificationOpen, setIsNotificationOpen] = useState(false);
-
-  const handleDropdownToggle = () => {
-    setIsDropdownOpen(!isDropdownOpen);
-    console.log("clicked");
-  };
-
-  console.log(isNotificationOpen);
-  console.log(isDropdownOpen);
-
+  // // Darkmode logic
   useEffect(() => {
-    const notificationToggle = document.getElementById("notification-toggle");
-    if (notificationToggle) {
-      notificationToggle.addEventListener("click", handleDropdownToggle);
+    // Function to handle theme toggle
+    const handleThemeToggle = () => {
+      const themeToggleDarkIcon = document.getElementById("theme-toggle-dark-icon");
+      const themeToggleLightIcon = document.getElementById("theme-toggle-light-icon");
+  
+      // Toggle icons inside button
+      themeToggleDarkIcon.classList.toggle("hidden");
+      themeToggleLightIcon.classList.toggle("hidden");
+  
+      // Toggle theme in local storage
+      if (localStorage.getItem("color-theme") === "dark") {
+        document.documentElement.classList.remove("dark");
+        localStorage.setItem("color-theme", "light");
+      } else {
+        document.documentElement.classList.add("dark");
+        localStorage.setItem("color-theme", "dark");
+      }
+    };
+  
+    // Add event listener for theme toggle button
+    const themeToggleBtn = document.getElementById("theme-toggle");
+    if (themeToggleBtn) {
+      themeToggleBtn.addEventListener("click", handleThemeToggle);
     }
-    // Cleanup function to remove event listener
+  
+    // Cleanup function
     return () => {
-      if (notificationToggle) {
-        notificationToggle.removeEventListener("click", handleDropdownToggle);
+      if (themeToggleBtn) {
+        themeToggleBtn.removeEventListener("click", handleThemeToggle);
       }
     };
   }, []);
+  
+
+  //notificaiton toggler
+  const [isNotificationOpen, setIsNotificationOpen] = useState(false);
 
   const handleNotificationToggle = () => {
     setIsNotificationOpen(!isNotificationOpen);
@@ -144,7 +133,7 @@ useEffect(() => {
               >
                 <svg
                   id="theme-toggle-dark-icon"
-                  className="hidden w-5 h-5"
+                  className=" w-5 h-5"
                   fill="currentColor"
                   viewBox="0 0 20 20"
                   xmlns="http://www.w3.org/2000/svg"
@@ -153,7 +142,7 @@ useEffect(() => {
                 </svg>
                 <svg
                   id="theme-toggle-light-icon"
-                  className=" w-5 h-5"
+                  className="hidden w-5 h-5"
                   fill="currentColor"
                   viewBox="0 0 20 20"
                   xmlns="http://www.w3.org/2000/svg"
@@ -212,7 +201,7 @@ useEffect(() => {
                   <path d="M12.133 10.632v-1.8A5.406 5.406 0 0 0 7.979 3.57.946.946 0 0 0 8 3.464V1.1a1 1 0 0 0-2 0v2.364a.946.946 0 0 0 .021.106 5.406 5.406 0 0 0-4.154 5.262v1.8C1.867 13.018 0 13.614 0 14.807 0 15.4 0 16 .538 16h12.924C14 16 14 15.4 14 14.807c0-1.193-1.867-1.789-1.867-4.175ZM3.823 17a3.453 3.453 0 0 0 6.354 0H3.823Z" />
                 </svg>
               </button>
-              <Notifications isNotificationOpen={isNotificationOpen}/>
+              <Notifications isNotificationOpen={isNotificationOpen} />
               {/* <!-- Dropdown menu --> */}
 
               {/* <!-- Apps --> */}
@@ -308,6 +297,7 @@ useEffect(() => {
                   aria-expanded="false"
                   aria-haspopup="true"
                   className="flex items-center p-2 text-gray-500 rounded-lg hover:text-gray-900 hover:bg-gray-100 dark:text-gray-400 dark:hover:text-white dark:hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-gray-300 dark:focus:ring-gray-600"
+                  onClick={handleProfileOpen}
                 >
                   <img
                     className="h-8 w-8 rounded-full object-cover"
@@ -317,7 +307,7 @@ useEffect(() => {
                   <span className="hidden lg:inline-block ml-2">
                     {/* User Name */}
                   </span>
-                  <svg
+                  {/* <svg
                     className="w-4 h-4 ml-1"
                     xmlns="http://www.w3.org/2000/svg"
                     viewBox="0 0 20 20"
@@ -328,47 +318,15 @@ useEffect(() => {
                       d="M6 8a2 2 0 100-4 2 2 0 000 4zM2 10a2 2 0 012-2h1a6 6 0 0111.66-1.5.75.75 0 10-.32-1.45A7.5 7.5 0 105.24 10H4a2 2 0 01-2-2zm14 2a2 2 0 11-4 0 2 2 0 014 0zm-3-2a.75.75 0 101.5 0 .75.75 0 00-1.5 0z"
                       clipRule="evenodd"
                     />
-                  </svg>
+                  </svg> */}
                 </button>
 
-                <div
-                  className="hidden absolute z-50 my-4 text-base bg-white rounded divide-y divide-gray-100 shadow-lg dark:bg-gray-700 dark:divide-gray-600 right-0 w-56"
-                  id="userMenuDropdown"
-                  aria-labelledby="userMenu"
-                >
-                  <div className="block p-2 text-base font-medium text-center text-gray-700 bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
-                    Coach Profile
-                  </div>
-                  <div className="flex flex-col p-4">
-                    <a
-                      href="#"
-                      className="block p-2 text-center rounded-lg hover:bg-gray-100 dark:hover:bg-gray-600"
-                    >
-                      My Profile
-                    </a>
-                    <a
-                      href="#"
-                      className="block p-2 text-center rounded-lg hover:bg-gray-100 dark:hover:bg-gray-600"
-                    >
-                      Settings
-                    </a>
-                    <a
-                      href="#"
-                      className="block p-2 text-center rounded-lg hover:bg-gray-100 dark:hover:bg-gray-600"
-                    >
-                      Logout
-                    </a>
-                  </div>
-                </div>
               </div>
+                 <ProfileMenu isProfileOpen={isProfileOpen} />
             </div>
           </div>
         </nav>
-        
       </header>
-      
-      
-
     </>
   );
 };

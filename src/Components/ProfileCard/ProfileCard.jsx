@@ -1,13 +1,13 @@
 import React from 'react';
-
+import profileImg from '../../assets/images/profile.jpg'
 const ProfileCard = () => {
   return (
-    <div id="profile-section" class="basis-1/5 md:order-2">
+    <div id="profile-section" className="basis-1/5 md:order-2">
 
     <div className="card">
       <div className="card-image mx-auto rounded-lg overflow-hidden relative">
         <img
-          src="./assets/images/profile.jpg"
+          src={profileImg}
           alt=""
           className="w-full rounded-md h-full object-cover"
         />

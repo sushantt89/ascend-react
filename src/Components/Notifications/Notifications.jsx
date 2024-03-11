@@ -1,4 +1,6 @@
 import React from "react";
+import profileImg from '../../assets/images/profile.jpg'
+
 
 const Notifications = ({isNotificationOpen}) => {
   return (
@@ -19,7 +21,7 @@ const Notifications = ({isNotificationOpen}) => {
             <div className="flex-shrink-0">
               <img
                 className="w-11 h-11 rounded-full"
-                src="./assets/images/profile.jpg"
+                src={profileImg}
                 alt="Bonnie Green avatar"
               />
               <div className="flex absolute justify-center items-center ml-6 -mt-5 w-5 h-5 rounded-full border border-white bg-priMorgan Maddox-700 dark:border-gray-700">
@@ -55,7 +57,7 @@ const Notifications = ({isNotificationOpen}) => {
             <div className="flex-shrink-0">
               <img
                 className="w-11 h-11 rounded-full"
-                src="./assets/images/profile.jpg"
+                src={profileImg}
                 alt="Jese Leos avatar"
               />
               <div className="flex absolute justify-center items-center ml-6 -mt-5 w-5 h-5 bg-gray-900 rounded-full border border-white dark:border-gray-700">
@@ -93,7 +95,7 @@ const Notifications = ({isNotificationOpen}) => {
             <div className="flex-shrink-0">
               <img
                 className="w-11 h-11 rounded-full"
-                src="./assets/images/profile.jpg"
+                src={profileImg}
                 alt="Joseph McFall avatar"
               />
               <div className="flex absolute justify-center items-center ml-6 -mt-5 w-5 h-5 bg-red-600 rounded-full border border-white dark:border-gray-700">
@@ -131,7 +133,7 @@ const Notifications = ({isNotificationOpen}) => {
             <div className="flex-shrink-0">
               <img
                 className="w-11 h-11 rounded-full"
-                src="./assets/images/profile.jpg"
+                src={profileImg}
                 alt="Roberta Casas image"
               />
               <div className="flex absolute justify-center items-center ml-6 -mt-5 w-5 h-5 bg-green-400 rounded-full border border-white dark:border-gray-700">
@@ -169,9 +171,10 @@ const Notifications = ({isNotificationOpen}) => {
             <div className="flex-shrink-0">
               <img
                 className="w-11 h-11 rounded-full"
-                src="./assets/images/profile.jpg"
+                src={profileImg}
                 alt="Robert image"
               />
+              
               <div className="flex absolute justify-center items-center ml-6 -mt-5 w-5 h-5 bg-purple-500 rounded-full border border-white dark:border-gray-700">
                 <svg
                   className="w-2 h-2 text-white"
@@ -182,7 +185,7 @@ const Notifications = ({isNotificationOpen}) => {
                 >
                   <path d="M11 0H2a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h9a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2Zm8.585 1.189a.994.994 0 0 0-.9-.138l-2.965.983a1 1 0 0 0-.685.949v8a1 1 0 0 0 .675.946l2.965 1.02a1.013 1.013 0 0 0 1.032-.242A1 1 0 0 0 20 12V2a1 1 0 0 0-.415-.811Z" />
                 </svg>
-              </div>className=
+              </div>
             </div>
             <div className="pl-3 w-full">
               <div className="text-gray-500 font-normal text-sm mb-1.5 dark:text-gray-400">
