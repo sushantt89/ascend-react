@@ -29,9 +29,12 @@ const Header = () => {
       if (localStorage.getItem("color-theme") === "dark") {
         document.documentElement.classList.remove("dark");
         localStorage.setItem("color-theme", "light");
+        console.log(localStorage);
       } else {
         document.documentElement.classList.add("dark");
         localStorage.setItem("color-theme", "dark");
+        console.log(localStorage);
+
       }
     };
   

@@ -2047,6 +2047,9 @@ video {
 .border-b {
   border-bottom-width: 1px;
 }
+.border-t{
+  border-top-width:1px ;
+}
 
 .border-e {
   border-inline-end-width: 1px;

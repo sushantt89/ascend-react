@@ -11,11 +11,12 @@ const Dashboard = () => {
         <div className="md:flex gap-5 w-full">
     <ProfileCard/>
     <div id="main-dashboard" className="basis-4/5 md:order-1 mt-4 sm:mt-0">
-    <div class="md:grid md:gap-4 lg:grid-cols-2">
-    <Tasks/>
-    <UpcomingAppointments/>
+    <div className="md:grid md:gap-4 lg:grid-cols-2">
+    {/* <Tasks/> */}
+    {/* <UpcomingAppointments/> */}
     </div>
-    <SalesOrder/>
+    {/* <SalesOrder/> */}
+ 
     </div>
     </div>
     </main>
