@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const ProfileMenu = ({ isProfileOpen }) => {
   return (
@@ -21,13 +22,12 @@ const ProfileMenu = ({ isProfileOpen }) => {
         aria-labelledby="dropdown"
       >
         <li>
-          <a
-            href="#"
+          <Link
+            to="/CoachProfile"
             className="block py-2 px-4 text-sm hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-400 dark:hover:text-white"
-            // onClick="opencoachProfile()"
           >
             My profile
-          </a>
+          </Link>
         </li>
         <li>
           <a

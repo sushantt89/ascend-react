@@ -14,6 +14,7 @@ const App = () => {
         <Aside />
         <Routes>
           <Route exact path="/" element={<Dashboard />} />
+          <Route exact path="/CoachProfile" element={<Dashboard />} />
         </Routes>
       </Router>
     </>

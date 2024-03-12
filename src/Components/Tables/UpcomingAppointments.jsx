@@ -1,11 +1,11 @@
 import React from "react";
 
-const UpcomingAppointments = () => {
+const UpcomingAppointments = ({title}) => {
   return (
     <div className="card">
       <div className="card-title flex items-center justify-between">
         <h4 className="flex gap-2 items-center mb-2">
-          <span> Upcoming Appointments </span>
+          <span> {title} </span>
           <span className="inline-flex items-center justify-center w-6 h-6 me-2 text-sm font-semibold text-gray-800 bg-violet-100 rounded-sm dark:bg-violet-700 dark:text-gray-300">
             10
           </span>

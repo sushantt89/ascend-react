@@ -1,13 +1,17 @@
 import React from 'react';
-import profileImg from '../../assets/images/profile.jpg'
+import { useLocation } from 'react-router-dom';
+import ClientImg from '../../assets/images/profile.jpg'
+import CoachImg from '../../assets/images/coachProfile.jpg'
 const ProfileCard = () => {
+  const location=useLocation();
   return (
+    
     <div id="profile-section" className="basis-1/5 md:order-2">
 
     <div className="card">
       <div className="card-image mx-auto rounded-lg overflow-hidden relative">
         <img
-          src={profileImg}
+        src={location.pathname==='/'?ClientImg:CoachImg}
           alt=""
           className="w-full rounded-md h-full object-cover"
         />

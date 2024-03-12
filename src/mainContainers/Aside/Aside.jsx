@@ -14,7 +14,7 @@ const Aside = () => {
       <p className="text-sm text-gray-500 mb-2 px-6">Main Menu</p>
       <ul className="main-menu mt-1">
         <li>
-          <Link to="/" className="sidebar-links active">
+          <Link default to="/" className="sidebar-links active">
             <i className="ri-dashboard-2-line"></i>&nbsp;&nbsp;Dashboard
             <i
               className="ri-arrow-drop-right-line absolute right-2 top-1/2 opacity-50"
