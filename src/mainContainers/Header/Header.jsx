@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import Notifications from "../../Components/Notifications/Notifications";
-import "../../styles/ui/output.css";
 import logo from "../../assets/images/logo.svg";
 import coachProfile from "../../assets/images/coachProfile.jpg";
 import ProfileMenu from "../../Components/ProfileMenu/ProfileMenu";

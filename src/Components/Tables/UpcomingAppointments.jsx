@@ -1,6 +1,45 @@
-import React from "react";
+import React, { useState,useEffect } from "react";
 
-const UpcomingAppointments = ({title}) => {
+const UpcomingAppointments = ({ title }) => {
+  const [appointments, setAppointments] = useState([
+    {
+      subject: "Health Coach Meeting",
+      meetingSchedule: "Friday, June 25, 2024 </br>10:45 PM - 11:15 PM",
+      host: "Kit Maxwell",
+      status: "Accepted",
+    },
+    {
+      subject: "Provider Meeting",
+      meetingSchedule: "Thursday, June 28, 2024 </br>01:45 PM - 02:15 PM",
+      host: "Tyler Shelton",
+      status: "Declined",
+    },
+    {
+      subject: "Health Coach Meeting",
+      meetingSchedule: "Monday, July 03, 2024 </br>10:45 AM - 11:15 AM",
+      host: "Morgan Maddox",
+      status: "Accepted",
+    },
+  ]);
+  useEffect(() => {
+    const updateStatusClasses = () => {
+      const updatedAppointment = appointments.map(appointment => {
+        const statusText = appointment.status.trim().toLowerCase();
+        if (statusText === "accepted" || statusText === "started") {
+          return { ...appointment, statusClass: "accepted" };
+        } else if (statusText === "declined" || statusText === "not started") {
+          return { ...appointment, statusClass: "declined" };
+        } else if (statusText === "no response") {
+          return { ...appointment, statusClass: "no-response" };
+        }
+        return appointment;
+      });
+      setAppointments(updatedAppointment);
+    };
+
+    updateStatusClasses();
+  }, []); // Run once on component mount
+
   return (
     <div className="card">
       <div className="card-title flex items-center justify-between">
@@ -46,69 +85,25 @@ const UpcomingAppointments = ({title}) => {
             </tr>
           </thead>
           <tbody>
-            <tr className="bg-white border-b border-t ">
-              <th
-                scope="row"
-                className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white"
-              >
-                Health Coach Meeting
-              </th>
-              <td className="px-6 py-4">
-                <pre>
-                  Friday, June 25, 2024
-                  <br />
-                  10:45 PM - 11:15 PM
-                </pre>
-              </td>
-              <td className="px-6 py-4">Kit Maxwell</td>
-              <td className="px-6 py-4">
-                <div className="status-container">
-                  <span className="status-circle"></span> Accepted
-                </div>
-              </td>
-            </tr>
-            <tr className="bg-white border-b border-t ">
-              <th
-                scope="row"
-                className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white"
-              >
-                Provider Meeting
-              </th>
-              <td className="px-6 py-4">
-                <pre>
-                  Thursday, June 28, 2024
-                  <br />
-                  01:45 PM - 02:15 PM
-                </pre>
-              </td>
-              <td className="px-6 py-4">Tyler Shelton</td>
-              <td className="px-6 py-4">
-                <div className="status-container">
-                  <span className="status-circle"></span> Declined
-                </div>
-              </td>
-            </tr>
-            <tr className="bg-white">
-              <th
-                scope="row"
-                className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white"
-              >
-                Health Coach Meeting
-              </th>
-              <td className="px-6 py-4">
-                <pre>
-                  Monday, July 03, 2024
-                  <br />
-                  10:45 AM - 11:15 AM
-                </pre>
-              </td>
-              <td className="px-6 py-4">Morgan Maddox</td>
-              <td className="px-6 py-4">
-                <div className="status-container">
-                  <span className="status-circle"></span> No Response
-                </div>
-              </td>
-            </tr>
+            {appointments.map((appointment) => (
+              <tr className="bg-white border-b border-t ">
+                <th
+                  scope="row"
+                  className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white"
+                >
+                 {appointment.subject}
+                </th>
+                  <pre>
+                  <td className="px-6 py-4" dangerouslySetInnerHTML={{ __html: appointment.meetingSchedule }} />
+                  </pre>
+                <td className="px-6 py-4">{appointment.host}</td>
+                <td className="px-6 py-4">
+                  <div className="status-container">
+                    <span className={`status-circle ${appointment.statusClass}`}></span> {appointment.status}
+                  </div>
+                </td>
+              </tr>
+            ))}
           </tbody>
         </table>
       </div>
