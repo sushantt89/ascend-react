@@ -1,29 +1,30 @@
-import React, { useState,useEffect } from "react";
+import React, { useState, useEffect } from "react";
 
 const UpcomingAppointments = ({ title }) => {
   const [appointments, setAppointments] = useState([
     {
       subject: "Health Coach Meeting",
-      meetingSchedule: "Friday, June 25, 2024 </br>10:45 PM - 11:15 PM",
+      meetingSchedule: "Friday, June 25, 2024 <br/>10:45 PM - 11:15 PM",
       host: "Kit Maxwell",
       status: "Accepted",
     },
     {
       subject: "Provider Meeting",
-      meetingSchedule: "Thursday, June 28, 2024 </br>01:45 PM - 02:15 PM",
+      meetingSchedule: "Thursday, June 28, 2024 <br/>01:45 PM - 02:15 PM",
       host: "Tyler Shelton",
       status: "Declined",
     },
     {
       subject: "Health Coach Meeting",
-      meetingSchedule: "Monday, July 03, 2024 </br>10:45 AM - 11:15 AM",
+      meetingSchedule: "Monday, July 03, 2024 <br/>10:45 AM - 11:15 AM",
       host: "Morgan Maddox",
       status: "Accepted",
     },
   ]);
+
   useEffect(() => {
     const updateStatusClasses = () => {
-      const updatedAppointment = appointments.map(appointment => {
+      const updatedAppointments = appointments.map(appointment => {
         const statusText = appointment.status.trim().toLowerCase();
         if (statusText === "accepted" || statusText === "started") {
           return { ...appointment, statusClass: "accepted" };
@@ -34,7 +35,7 @@ const UpcomingAppointments = ({ title }) => {
         }
         return appointment;
       });
-      setAppointments(updatedAppointment);
+      setAppointments(updatedAppointments);
     };
 
     updateStatusClasses();
@@ -44,7 +45,7 @@ const UpcomingAppointments = ({ title }) => {
     <div className="card">
       <div className="card-title flex items-center justify-between">
         <h4 className="flex gap-2 items-center mb-2">
-          <span> {title} </span>
+          <span>{title}</span>
           <span className="inline-flex items-center justify-center w-6 h-6 me-2 text-sm font-semibold text-gray-800 bg-violet-100 rounded-sm dark:bg-violet-700 dark:text-gray-300">
             10
           </span>
@@ -85,21 +86,23 @@ const UpcomingAppointments = ({ title }) => {
             </tr>
           </thead>
           <tbody>
-            {appointments.map((appointment) => (
-              <tr className="bg-white border-b border-t ">
+            {appointments.map((appointment, index) => (
+              <tr key={index} className="bg-white border-b border-t ">
                 <th
                   scope="row"
                   className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white"
                 >
-                 {appointment.subject}
+                  {appointment.subject}
                 </th>
-                  <pre>
-                  <td className="px-6 py-4" dangerouslySetInnerHTML={{ __html: appointment.meetingSchedule }} />
-                  </pre>
+                <td
+                  className="px-6 py-4"
+                  dangerouslySetInnerHTML={{ __html: appointment.meetingSchedule }}
+                />
                 <td className="px-6 py-4">{appointment.host}</td>
                 <td className="px-6 py-4">
                   <div className="status-container">
-                    <span className={`status-circle ${appointment.statusClass}`}></span> {appointment.status}
+                    <span className={`status-circle ${appointment.statusClass}`}></span>{" "}
+                    {appointment.status}
                   </div>
                 </td>
               </tr>

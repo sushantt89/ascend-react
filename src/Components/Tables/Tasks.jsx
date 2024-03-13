@@ -25,6 +25,7 @@ const Tasks = ({ title }) => {
 
     updateStatusClasses();
   }, []); // Run once on component mount
+  
 
   return (
     <div className="card">
@@ -47,25 +48,25 @@ const Tasks = ({ title }) => {
               <th scope="col" className="px-6 py-3">
                 Subject &nbsp;
                 <button className="toggleButton">
-                  <i className="fas fa-arrow-up arrow"></i>
+                <i className="ri-arrow-up-line"></i>
                 </button>
               </th>
               <th scope="col" className="px-6 py-3">
                 Due Date &nbsp;
                 <button className="toggleButton">
-                  <i className="fas fa-arrow-up arrow"></i>
+                <i className="ri-arrow-up-line"></i>
                 </button>
               </th>
               <th scope="col" className="px-6 py-3">
                 Status &nbsp;
                 <button className="toggleButton">
-                  <i className="fas fa-arrow-up arrow"></i>
+                <i className="ri-arrow-up-line"></i>
                 </button>
               </th>
               <th scope="col" className="px-6 py-3">
                 Task Owner &nbsp;
                 <button className="toggleButton">
-                  <i className="fas fa-arrow-up arrow"></i>
+                <i className="ri-arrow-up-line"></i>
                 </button>
               </th>
             </tr>

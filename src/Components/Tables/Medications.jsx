@@ -25,27 +25,27 @@ const Medications = ({value}) => {
           <tr>
             <th scope="col" className="px-6 py-3">Medication Record &nbsp;
                 <button className="toggleButton">
-                  <i className="fas fa-arrow-up arrow"></i>
+                 <i class="ri-arrow-up-line"></i>
                 </button></th>
             <th scope="col" className="px-6 py-3">Contact Name &nbsp;
                 <button className="toggleButton">
-                  <i className="fas fa-arrow-up arrow"></i>
+                 <i class="ri-arrow-up-line"></i>
                 </button></th>
             <th scope="col" className="px-6 py-3">Medication Name &nbsp;
                 <button className="toggleButton">
-                  <i className="fas fa-arrow-up arrow"></i>
+                 <i class="ri-arrow-up-line"></i>
                 </button></th>
             <th scope="col" className="px-6 py-3">Dosage &nbsp;
                 <button className="toggleButton">
-                  <i className="fas fa-arrow-up arrow"></i>
+                 <i class="ri-arrow-up-line"></i>
                 </button></th>
             <th scope="col" className="px-6 py-3">Active &nbsp;
                 <button className="toggleButton">
-                  <i className="fas fa-arrow-up arrow"></i>
+                 <i class="ri-arrow-up-line"></i>
                 </button></th>
             <th scope="col" className="px-6 py-3">Inactive since &nbsp;
                 <button className="toggleButton">
-                  <i className="fas fa-arrow-up arrow"></i>
+                 <i class="ri-arrow-up-line"></i>
                 </button></th>
           </tr>
         </thead>
@@ -61,7 +61,7 @@ const Medications = ({value}) => {
             <td className="px-6 py-4">Aspirin</td>
             <td className="px-6 py-4">100mg</td>
             <td className="px-6 py-4">
-              <i className="fa-solid fa-check"></i>
+              <i class="ri-check-line"></i>
             </td>
             <td className="px-6 py-4"></td>
           </tr>
@@ -77,7 +77,7 @@ const Medications = ({value}) => {
             <td className="px-6 py-4">Ibuprofen</td>
             <td className="px-6 py-4">100mg</td>
             <td className="px-6 py-4">
-              <i className="fa-solid fa-check"></i>
+              <i class="ri-check-line"></i>
             </td>
             <td className="px-6 py-4"></td>
           </tr>
@@ -93,7 +93,7 @@ const Medications = ({value}) => {
             <td className="px-6 py-4">Acetaminophen</td>
             <td className="px-6 py-4">300mg</td>
             <td className="px-6 py-4">
-              <i className="fa-solid fa-xmark"></i>
+              <i class="ri-close-line"></i>
             </td>
             <td className="px-6 py-4">Dec 10,2021</td>
           </tr>
@@ -109,7 +109,7 @@ const Medications = ({value}) => {
             <td className="px-6 py-4">Aspirin</td>
             <td className="px-6 py-4">200mg</td>
             <td className="px-6 py-4">
-              <i className="fa-solid fa-xmark"></i>
+              <i class="ri-close-line"></i>
             </td>
             <td className="px-6 py-4">Dec 28,2021</td>
           </tr>
@@ -125,7 +125,7 @@ const Medications = ({value}) => {
             <td className="px-6 py-4">Penicillin</td>
             <td className="px-6 py-4">500mg</td>
             <td className="px-6 py-4">
-              <i className="fa-solid fa-check"></i>
+              <i class="ri-check-line"></i>
             </td>
             <td className="px-6 py-4"></td>
           </tr>

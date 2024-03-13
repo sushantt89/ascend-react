@@ -26,37 +26,37 @@ const LabResults = () => {
                       <th scope="col" className="px-6 py-3">
                         Test Name &nbsp;
                         <button className="toggleButton">
-                          <i className="fas fa-arrow-up arrow"></i>
+                         <i class="ri-arrow-up-line"></i>
                         </button>
                       </th>
                       <th scope="col" className="px-6 py-3">
                         Reference Range &nbsp;
                         <button className="toggleButton">
-                          <i className="fas fa-arrow-up arrow"></i>
+                         <i class="ri-arrow-up-line"></i>
                         </button>
                       </th>
                       <th scope="col" className="px-6 py-3">
                         Apr,29,2022 &nbsp;
                         <button className="toggleButton">
-                          <i className="fas fa-arrow-up arrow"></i>
+                         <i class="ri-arrow-up-line"></i>
                         </button>
                       </th>
                       <th scope="col" className="px-6 py-3">
                         Jun,14,2023 &nbsp;
                         <button className="toggleButton">
-                          <i className="fas fa-arrow-up arrow"></i>
+                         <i class="ri-arrow-up-line"></i>
                         </button>
                       </th>
                       <th scope="col" className="px-6 py-3">
                         Mar,26,2023 &nbsp;
                         <button className="toggleButton">
-                          <i className="fas fa-arrow-up arrow"></i>
+                         <i class="ri-arrow-up-line"></i>
                         </button>
                       </th>
                       <th scope="col" className="px-6 py-3">
                         Jan,12,2024 &nbsp;
                         <button className="toggleButton">
-                          <i className="fas fa-arrow-up arrow"></i>
+                         <i class="ri-arrow-up-line"></i>
                         </button>
                       </th>
                     </tr>
@@ -71,31 +71,19 @@ const LabResults = () => {
                       </th>
                       <td className="px-6 py-4">3-7x10E3/uL</td>
                       <td className="px-6 py-4">
-                        <i
-                          className="fa-solid fa-arrow-up"
-                          style={{color:"green"}}
-                        ></i>
+                          <i class="ri-arrow-up-line"  style={{color:"green"}}></i>
                         2.5
                       </td>
                       <td className="px-6 py-4">
-                        <i
-                          className="fa-solid fa-arrow-up"
-                          style={{color:"green"}}
-                        ></i>
+                          <i class="ri-arrow-up-line"  style={{color:"green"}}></i>
                         2.5
                       </td>
                       <td className="px-6 py-4">
-                        <i
-                          className="fa-solid fa-arrow-up"
-                          style={{color:"green"}}
-                        ></i>
+                          <i class="ri-arrow-up-line"  style={{color:"green"}}></i>
                         2.5
                       </td>
                       <td className="px-6 py-4">
-                        <i
-                          className="fa-solid fa-arrow-up"
-                          style={{color:"green"}}
-                        ></i>
+                          <i class="ri-arrow-up-line"  style={{color:"green"}}></i>
                         2.5
                       </td>
                     </tr>
@@ -108,31 +96,19 @@ const LabResults = () => {
                       </th>
                       <td className="px-6 py-4">0-2 ratio</td>
                       <td className="px-6 py-4">
-                        <i
-                          className="fa-solid fa-arrow-up"
-                          style={{color:"green"}}
-                        ></i>
+                          <i class="ri-arrow-up-line"  style={{color:"green"}}></i>
                         1.7
                       </td>
                       <td className="px-6 py-4">
-                        <i
-                          className="fa-solid fa-arrow-up"
-                          style={{color:"green"}}
-                        ></i>
+                          <i class="ri-arrow-up-line"  style={{color:"green"}}></i>
                         1.7
                       </td>
                       <td className="px-6 py-4">
-                        <i
-                          className="fa-solid fa-arrow-up"
-                          style={{color:"green"}}
-                        ></i>
+                          <i class="ri-arrow-up-line"  style={{color:"green"}}></i>
                         1.7
                       </td>
                       <td className="px-6 py-4">
-                        <i
-                          className="fa-solid fa-arrow-up"
-                          style={{color:"green"}}
-                        ></i>
+                          <i class="ri-arrow-up-line"  style={{color:"green"}}></i>
                         1.7
                       </td>
                     </tr>
@@ -145,31 +121,20 @@ const LabResults = () => {
                       </th>
                       <td className="px-6 py-4">0-1x10E3/uL</td>
                       <td className="px-6 py-4">
-                        <i
-                          className="fa-solid fa-arrow-down"
-                          style={{color:"red"}}
-                        ></i>
+                      <i class="ri-arrow-down-line"  style={{color:"red"}}></i>
+                    
                         2.3
                       </td>
                       <td className="px-6 py-4">
-                        <i
-                          className="fa-solid fa-arrow-down"
-                          style={{color:"red"}}
-                        ></i>
+                           <i class="ri-arrow-down-line"  style={{color:"red"}}></i>
                         2.3
                       </td>
                       <td className="px-6 py-4">
-                        <i
-                          className="fa-solid fa-arrow-down"
-                          style={{color:"red"}}
-                        ></i>
+                           <i class="ri-arrow-down-line"  style={{color:"red"}}></i>
                         2.3
                       </td>
                       <td className="px-6 py-4">
-                        <i
-                          className="fa-solid fa-arrow-down"
-                          style={{color:"red"}}
-                        ></i>
+                           <i class="ri-arrow-down-line"  style={{color:"red"}}></i>
                         2.3
                       </td>
                     </tr>

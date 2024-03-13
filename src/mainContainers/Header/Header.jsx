@@ -3,16 +3,20 @@ import Notifications from "../../Components/Notifications/Notifications";
 import logo from "../../assets/images/logo.svg";
 import coachProfile from "../../assets/images/coachProfile.jpg";
 import ProfileMenu from "../../Components/ProfileMenu/ProfileMenu";
+import UserActions from "../../Components/UserActions/UserActions";
 
 const Header = () => {
-  //handleProfileClick();
+  //handleProfileClick
   const [isProfileOpen, setIsProfileOpen] = useState(false);
-
-  
   const handleProfileOpen = () => {
     setIsProfileOpen(!isProfileOpen);
   };
-
+//handle User Actions click
+const[isuserActionsOpen,setIsUserActionsOpen]=useState(false);
+const handleUserActionsOpen=()=>{
+setIsUserActionsOpen(!isuserActionsOpen);
+}
+console.log(isuserActionsOpen)
   // // Darkmode logic
   useEffect(() => {
     // Function to handle theme toggle
@@ -212,6 +216,7 @@ const Header = () => {
                 title="User Actions"
                 id="apps-toggle"
                 className="p-2 text-gray-500 rounded-lg hover:text-gray-900 hover:bg-gray-100 dark:text-gray-400 dark:hover:text-white dark:hover:bg-gray-700 focus:ring-4 focus:ring-gray-300 dark:focus:ring-gray-600"
+                onClick={handleUserActionsOpen}
               >
                 <span className="sr-only">View notifications</span>
                 {/* <!-- Icon --> */}
@@ -225,6 +230,7 @@ const Header = () => {
                   <path d="M6.143 0H1.857A1.857 1.857 0 0 0 0 1.857v4.286C0 7.169.831 8 1.857 8h4.286A1.857 1.857 0 0 0 8 6.143V1.857A1.857 1.857 0 0 0 6.143 0Zm10 0h-4.286A1.857 1.857 0 0 0 10 1.857v4.286C10 7.169 10.831 8 11.857 8h4.286A1.857 1.857 0 0 0 18 6.143v-4.286A1.857 1.857 0 0 0 16.143 0Zm-10 10H1.857A1.857 1.857 0 0 0 0 11.857v4.286C0 17.169.831 18 1.857 18h4.286A1.857 1.857 0 0 0 8 16.143v-4.286A1.857 1.857 0 0 0 6.143 10Zm10 0h-4.286A1.857 1.857 0 0 0 10 11.857v4.286c0 1.026.831 1.857 1.857 1.857h4.286A1.857 1.857 0 0 0 18 16.143v-4.286A1.857 1.857 0 0 0 16.143 10Z" />
                 </svg>
               </button>
+              <UserActions isuserActionsOpen={isuserActionsOpen}/>
               {/* <!-- Dropdown menu --> */}
               <div
                 className="hidden overflow-hidden z-50 my-4 max-w-sm text-base list-none bg-white rounded divide-y divide-gray-100 shadow-lg dark:bg-gray-700 dark:divide-gray-600 absolute top-full right-0 w-96"

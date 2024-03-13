@@ -23,7 +23,7 @@ const ClientTableGrouping = () => {
       <LabResults value={location.pathname === "/" ? "" : "hidden"} />
       <Medications value={location.pathname === "/" ? "" : "hidden"} />
       <AwaitingPayment  value={location.pathname === "/" ? "hidden" : ""}/>
-      <Communications value={location.pathname === "/" ? "hidden" : ""}s/>
+      <Communications value={location.pathname === "/" ? "hidden" : ""}/>
     </>
   );
 };

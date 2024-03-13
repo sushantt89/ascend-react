@@ -25,11 +25,11 @@ const Communications = ({value}) => {
           <tr>
             <th scope="col" className="px-6 py-3">Touchpoint ID &nbsp;
               <button className="toggleButton">
-                <i className="fas fa-arrow-up arrow"></i>
+               <i class="ri-arrow-up-line"></i>
               </button></th>
             <th scope="col" className="px-6 py-3">Email &nbsp;
               <button className="toggleButton">
-                <i className="fas fa-arrow-up arrow"></i>
+               <i class="ri-arrow-up-line"></i>
               </button></th>
           </tr>
         </thead>

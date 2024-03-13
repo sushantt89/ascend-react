@@ -1,13 +1,14 @@
 import React from "react";
-import profileImg from '../../assets/images/profile.jpg'
+import profileImg from "../../assets/images/profile.jpg";
 
-
-const Notifications = ({isNotificationOpen}) => {
+const Notifications = ({ isNotificationOpen }) => {
   return (
     <>
       {/* <!-- Dropdown menu --> */}
       <div
-        className={`${isNotificationOpen ? "" : "hidden"} overflow-hidden z-50 my-4 max-w-sm text-base list-none bg-white rounded divide-y divide-gray-100 shadow-lg dark:divide-gray-600 dark:bg-gray-700 absolute top-full right-0 w-96`}
+        className={`${
+          isNotificationOpen ? "" : "hidden"
+        } overflow-hidden z-50 my-4 max-w-sm text-base list-none bg-white rounded divide-y divide-gray-100 shadow-lg dark:divide-gray-600 dark:bg-gray-700 absolute top-full right-0 w-96`}
         id="notification-dropdown"
       >
         <div className="block py-2 px-4 text-base font-medium text-center text-gray-700 bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
@@ -174,7 +175,7 @@ const Notifications = ({isNotificationOpen}) => {
                 src={profileImg}
                 alt="Robert image"
               />
-              
+
               <div className="flex absolute justify-center items-center ml-6 -mt-5 w-5 h-5 bg-purple-500 rounded-full border border-white dark:border-gray-700">
                 <svg
                   className="w-2 h-2 text-white"
